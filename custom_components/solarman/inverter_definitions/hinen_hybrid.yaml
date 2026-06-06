@@ -395,6 +395,14 @@ parameters:
         registers: [342]
         description: "Slave DSP firmware version (major * 100 + minor)"
 
+      - name: "Total Working Time"
+        state_class: "total_increasing"
+        uom: "s"
+        scale: .5
+        rule: 1
+        registers: [255, 254]
+        description: "Total inverter operating time in seconds (register value × 0.5)"
+
   - group: Diagnostics
     update_interval: 30
     items:
@@ -482,6 +490,102 @@ parameters:
           min: .1
           dev: 100
           invalidate_all: 2
+
+      - name: "PV1 Today Production"
+        alt: "PV1 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [257, 256]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV1 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV1 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [259, 258]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV1 MPPT input"
+
+      - name: "PV2 Today Production"
+        alt: "PV2 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [261, 260]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV2 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV2 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [263, 262]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV2 MPPT input"
+
+      - name: "PV3 Today Production"
+        alt: "PV3 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [265, 264]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV3 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV3 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [267, 266]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV3 MPPT input"
+
+      - name: "PV4 Today Production"
+        alt: "PV4 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [269, 268]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV4 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV4 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [271, 270]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV4 MPPT input"
 
       - name: "Today Battery Charge"
         alt: "Battery Daily Charging Energy"
