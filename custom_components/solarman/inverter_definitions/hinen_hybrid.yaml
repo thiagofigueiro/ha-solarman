@@ -491,6 +491,35 @@ parameters:
           dev: 100
           invalidate_all: 2
 
+      - name: "PV Year Production"
+        alt: "PV Annual Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [351, 350]
+        icon: "mdi:solar-power"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual PV energy production"
+
+      - name: "PV Month Production"
+        alt: "PV Monthly Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [353, 352]
+        icon: "mdi:solar-power"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly PV energy production"
+
       - name: "PV1 Today Production"
         alt: "PV1 Daily Production"
         class: "energy"
@@ -606,6 +635,35 @@ parameters:
         registers: [279, 278]
         icon: "mdi:battery-plus"
 
+      - name: "Battery Charge Year"
+        alt: "Battery Charge Annual"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [367, 366]
+        icon: "mdi:battery-plus"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual battery charge energy"
+
+      - name: "Battery Charge Month"
+        alt: "Battery Charge Monthly"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [369, 368]
+        icon: "mdi:battery-plus"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly battery charge energy"
+
       - name: "Today Battery Discharge"
         alt: "Battery Daily Discharging Energy"
         class: "energy"
@@ -625,6 +683,35 @@ parameters:
         registers: [283, 282]
         icon: "mdi:battery-minus"
 
+      - name: "Battery Discharge Year"
+        alt: "Battery Discharge Annual"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [371, 370]
+        icon: "mdi:battery-minus"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual battery discharge energy"
+
+      - name: "Battery Discharge Month"
+        alt: "Battery Discharge Monthly"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [373, 372]
+        icon: "mdi:battery-minus"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly battery discharge energy"
+
       - name: "Today Load Consumption"
         alt: Daily Load Consumption
         friendly_name: Today's Energy Consumption
@@ -642,6 +729,33 @@ parameters:
         scale: .1
         rule: 2
         registers: [303, 302]
+
+      - name: "Load Year Consumption"
+        alt: "Load Annual Consumption"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [355, 354]
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual load consumption"
+
+      - name: "Load Month Consumption"
+        alt: "Load Monthly Consumption"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [357, 356]
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly load consumption"
 
       - name: "Today Energy Export"
         alt: Daily Energy Sold
@@ -665,6 +779,35 @@ parameters:
         registers: [307, 306]
         icon: mdi:transmission-tower-import
 
+      - name: "Export Year Energy"
+        alt: "Export Annual Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [359, 358]
+        icon: "mdi:transmission-tower-import"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual energy exported to the grid"
+
+      - name: "Export Month Energy"
+        alt: "Export Monthly Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [361, 360]
+        icon: "mdi:transmission-tower-import"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly energy exported to the grid"
+
       - name: "Today Energy Import"
         alt: Daily Energy Bought
         friendly_name: Today's Energy Import
@@ -687,6 +830,35 @@ parameters:
         rule: 2
         registers: [311, 310]
         icon: mdi:transmission-tower-export
+
+      - name: "Import Year Energy"
+        alt: "Import Annual Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [363, 362]
+        icon: "mdi:transmission-tower-export"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual energy imported from the grid"
+
+      - name: "Import Month Energy"
+        alt: "Import Monthly Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [365, 364]
+        icon: "mdi:transmission-tower-export"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly energy imported from the grid"
 
       - name: Today Losses
         alt: Daily Losses
