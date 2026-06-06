@@ -749,7 +749,6 @@ parameters:
     update_interval: 300
     items:
       - name: "Energy Pattern"
-        platform: "select"
         rule: 1
         registers: [125]
         icon: mdi:battery-sync
@@ -761,8 +760,7 @@ parameters:
           - key: 2
             value: "Grid"
             
-      - name: "Battery Control Mode"
-        platform: "select"
+      - name: "Battery Type"
         rule: 1
         registers: [126]
         icon: "mdi:battery"
