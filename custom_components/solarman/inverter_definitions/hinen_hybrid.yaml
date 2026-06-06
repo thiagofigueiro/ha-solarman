@@ -241,7 +241,7 @@ parameters:
         description: "AC power drawn from the grid to charge the battery"
 
       - name: "Reactive Power"
-        class: "power"
+        class: "reactive_power"
         state_class: "measurement"
         uom: "var"
         scale: .1
@@ -251,7 +251,7 @@ parameters:
         description: "Total AC reactive power of the inverter"
 
       - name: "Apparent Power"
-        class: "power"
+        class: "apparent_power"
         state_class: "measurement"
         uom: "VA"
         scale: .1
@@ -297,7 +297,7 @@ parameters:
       - name: "Grid L1 Reactive Power"
         entity_category: "diagnostic"
         l: 1
-        class: "power"
+        class: "reactive_power"
         state_class: "measurement"
         uom: "var"
         scale: .1
@@ -331,7 +331,7 @@ parameters:
       - name: "Grid L2 Apparent Power"
         entity_category: "diagnostic"
         l: 2
-        class: "power"
+        class: "apparent_power"
         state_class: "measurement"
         uom: "VA"
         scale: .1
@@ -355,7 +355,7 @@ parameters:
       - name: "Grid L2 Reactive Power"
         entity_category: "diagnostic"
         l: 2
-        class: "power"
+        class: "reactive_power"
         state_class: "measurement"
         uom: "var"
         scale: .1
@@ -389,7 +389,7 @@ parameters:
       - name: "Grid L3 Apparent Power"
         entity_category: "diagnostic"
         l: 3
-        class: "power"
+        class: "apparent_power"
         state_class: "measurement"
         uom: "VA"
         scale: .1
@@ -413,7 +413,7 @@ parameters:
       - name: "Grid L3 Reactive Power"
         entity_category: "diagnostic"
         l: 3
-        class: "power"
+        class: "reactive_power"
         state_class: "measurement"
         uom: "var"
         scale: .1
