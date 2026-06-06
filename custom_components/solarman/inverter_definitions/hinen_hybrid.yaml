@@ -603,6 +603,119 @@ parameters:
         registers: [173]
         description: "Number of battery charge/discharge cycles"
 
+  - group: Battery Diagnostics
+    update_interval: 60
+    items:
+      - name: "BMS Status"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        registers: [155]
+        description: "Battery management system status"
+
+      - name: "BMS SOC"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "%"
+        scale: .01
+        registers: [162]
+        description: "BMS-reported state of charge (0.01 resolution)"
+
+      - name: "BMS Voltage"
+        entity_category: "diagnostic"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        registers: [163]
+        description: "BMS-reported battery voltage"
+
+      - name: "BMS Temperature"
+        entity_category: "diagnostic"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [165]
+        description: "BMS-reported battery temperature"
+
+      - name: "BMS Hardware Version"
+        entity_category: "diagnostic"
+        registers: [171]
+        description: "BMS hardware version number"
+
+      - name: "BMS Delta Voltage"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        registers: [172]
+        description: "Single battery voltage difference within the pack"
+
+      - name: "BMS Constant Voltage"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        registers: [175]
+        description: "BMS constant voltage (CV) setpoint"
+
+      - name: "BMS Info"
+        entity_category: "diagnostic"
+        registers: [176]
+        description: "BMS information flags"
+
+      - name: "Pack Info"
+        entity_category: "diagnostic"
+        registers: [177]
+        description: "Battery pack information flags"
+
+      - name: "Max Cell Voltage"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        registers: [178]
+        description: "Maximum voltage among all cells in the battery"
+
+      - name: "Min Cell Voltage"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        registers: [179]
+        description: "Minimum voltage among all cells in the battery"
+
+      - name: "Module Count"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        registers: [180]
+        description: "Number of battery modules in parallel"
+
+      - name: "Cell Count"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        registers: [181]
+        description: "Number of cells per module"
+
+      - name: "Max Cell Temperature"
+        entity_category: "diagnostic"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        registers: [184]
+        description: "Maximum temperature among all cells"
+
+      - name: "Min Cell Temperature"
+        entity_category: "diagnostic"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        registers: [185]
+        description: "Minimum temperature among all cells"
+
   - group: Settings
     update_interval: 300
     items:
@@ -1220,6 +1333,111 @@ parameters:
           dev: 100
           invalidate_all:
         description: "Monthly energy imported from the grid"
+
+      - name: "AC Today Production"
+        alt: "AC Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [251, 250]
+        icon: "mdi:solar-power"
+        description: "Daily AC-side energy production"
+
+      - name: "AC Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [253, 252]
+        icon: "mdi:solar-power"
+        description: "Total AC-side energy production"
+
+      - name: "AC Charge Today Energy"
+        alt: "AC Charge Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [285, 284]
+        icon: "mdi:transmission-tower-export"
+        description: "Daily AC energy used to charge the battery from the grid"
+
+      - name: "AC Charge Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [287, 286]
+        icon: "mdi:transmission-tower-export"
+        description: "Total AC energy used to charge the battery from the grid"
+
+      - name: "Extra Today Energy"
+        alt: "Extra Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [289, 288]
+        icon: "mdi:flash"
+        description: "Daily extra power from inverter to loads"
+
+      - name: "Extra Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [291, 290]
+        icon: "mdi:flash"
+        description: "Total extra power from inverter to loads"
+
+      - name: "System Today Energy"
+        alt: "System Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [293, 292]
+        icon: "mdi:sine-wave"
+        description: "Daily system energy generation"
+
+      - name: "System Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [295, 294]
+        icon: "mdi:sine-wave"
+        description: "Total system energy generation"
+
+      - name: "Self Consumption Today"
+        alt: "Self Consumption Daily"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [297, 296]
+        icon: "mdi:home-lightning-bolt"
+        description: "Daily self-consumed PV energy (generated and used locally)"
+
+      - name: "Self Consumption Total"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [299, 298]
+        icon: "mdi:home-lightning-bolt"
+        description: "Total self-consumed PV energy (generated and used locally)"
 
       - name: Today Losses
         alt: Daily Losses
