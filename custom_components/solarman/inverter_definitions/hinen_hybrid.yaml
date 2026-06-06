@@ -213,6 +213,33 @@ parameters:
         rule: 2
         registers: [77, 76]
 
+      - name: "Grid Power"
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 2
+        registers: [26, 25]
+        icon: "mdi:transmission-tower"
+        description: "Total AC active power of the inverter"
+
+      - name: "Power Factor"
+        state_class: "measurement"
+        scale: .0001
+        offset: 10000
+        rule: 1
+        registers: [57]
+        description: "Power factor offset from 10000 (formula: PF = (raw - 10000) / 10000)"
+
+      - name: "AC Charge Power"
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 1
+        registers: [107, 106]
+        description: "AC power drawn from the grid to charge the battery"
+
   - group: Battery
     update_interval: 5
     items:
@@ -268,6 +295,62 @@ parameters:
         registers: [105, 104]
         icon: mdi:battery-plus
 
+      - name: "Battery Combined Power"
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 2
+        registers: [150, 149]
+        icon: "mdi:battery"
+        description: "Combined battery power (positive = charge, negative = discharge)"
+
+      - name: "Battery Current"
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 2
+        registers: [164]
+        icon: "mdi:current-dc"
+        description: "Battery current measured by the BMS"
+
+      - name: "BMS Max Charge Current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 1
+        registers: [166]
+        description: "Maximum charging current allowed by the BMS"
+
+      - name: "BMS Max Discharge Current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 1
+        registers: [167]
+        description: "Maximum discharging current allowed by the BMS"
+
+      - name: "BMS Gauge Remaining"
+        state_class: "measurement"
+        uom: "Wh"
+        rule: 1
+        registers: [168]
+        description: "BMS reported remaining capacity"
+
+      - name: "BMS Gauge Full Charge Capacity"
+        state_class: "measurement"
+        uom: "Wh"
+        rule: 1
+        registers: [169]
+        description: "BMS reported full charge capacity"
+
+      - name: "BMS Cycle Count"
+        state_class: "measurement"
+        rule: 1
+        registers: [173]
+        description: "Number of battery charge/discharge cycles"
+
   - group: Settings
     update_interval: 300
     items:
@@ -301,6 +384,74 @@ parameters:
       - name: Battery Software Version
         rule: 1
         registers: [170]
+
+      - name: "Master DSP Version"
+        rule: 1
+        registers: [341]
+        description: "Master DSP firmware version (major * 100 + minor)"
+
+      - name: "Slave DSP Version"
+        rule: 1
+        registers: [342]
+        description: "Slave DSP firmware version (major * 100 + minor)"
+
+  - group: Diagnostics
+    update_interval: 30
+    items:
+      - name: "IPM Temperature"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [133]
+        description: "Internal intelligent power module temperature"
+
+      - name: "LLC Temperature"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [134]
+        description: "Inductor-Inductor-Capacitor resonant converter radiator temperature"
+
+      - name: "Fan Speed"
+        state_class: "measurement"
+        rule: 1
+        registers: [135]
+        icon: "mdi:fan"
+        description: "Internal cooling fan speed"
+
+      - name: "Bus1 Voltage"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [130]
+        description: "DC bus 1 internal voltage"
+
+      - name: "Bus2 Voltage"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [131]
+        description: "DC bus 2 internal voltage"
+
+      - name: "Fault Maincode"
+        class: "enum"
+        rule: 1
+        registers: [147]
+        icon: "mdi:alert-outline"
+        description: "Inverter main fault code (0 = no fault)"
+        lookup:
+          - key: 0
+            value: "No Fault"
+          - key: default
+            value: "Fault"
 
   - group: Energy
     update_interval: 30
@@ -390,7 +541,7 @@ parameters:
 
       - name: "Today Energy Export"
         alt: Daily Energy Sold
-        descripton: Today's energy exported/returned to the grid
+        description: "Energy exported to the grid today"
         class: "energy"
         state_class: "total_increasing"
         uom: "kWh"
