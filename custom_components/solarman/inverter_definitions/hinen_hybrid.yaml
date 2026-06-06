@@ -608,6 +608,7 @@ parameters:
     items:
       - name: "BMS Status"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         rule: 1
         registers: [155]
@@ -615,6 +616,7 @@ parameters:
 
       - name: "BMS SOC"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         uom: "%"
         scale: .01
@@ -624,6 +626,7 @@ parameters:
 
       - name: "BMS Voltage"
         entity_category: "diagnostic"
+        hidden:
         class: "voltage"
         state_class: "measurement"
         uom: "V"
@@ -634,6 +637,7 @@ parameters:
 
       - name: "BMS Temperature"
         entity_category: "diagnostic"
+        hidden:
         class: "temperature"
         state_class: "measurement"
         uom: "°C"
@@ -644,12 +648,14 @@ parameters:
 
       - name: "BMS Hardware Version"
         entity_category: "diagnostic"
+        hidden:
         rule: 1
         registers: [171]
         description: "BMS hardware version number"
 
       - name: "BMS Delta Voltage"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         uom: "V"
         scale: .001
@@ -659,6 +665,7 @@ parameters:
 
       - name: "BMS Constant Voltage"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         uom: "V"
         scale: .1
@@ -668,18 +675,21 @@ parameters:
 
       - name: "BMS Info"
         entity_category: "diagnostic"
+        hidden:
         rule: 1
         registers: [176]
         description: "BMS information flags"
 
       - name: "Pack Info"
         entity_category: "diagnostic"
+        hidden:
         rule: 1
         registers: [177]
         description: "Battery pack information flags"
 
       - name: "Max Cell Voltage"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         uom: "V"
         scale: .001
@@ -689,6 +699,7 @@ parameters:
 
       - name: "Min Cell Voltage"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         uom: "V"
         scale: .001
@@ -698,6 +709,7 @@ parameters:
 
       - name: "Module Count"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         rule: 1
         registers: [180]
@@ -705,6 +717,7 @@ parameters:
 
       - name: "Cell Count"
         entity_category: "diagnostic"
+        hidden:
         state_class: "measurement"
         rule: 1
         registers: [181]
@@ -712,6 +725,7 @@ parameters:
 
       - name: "Max Cell Temperature"
         entity_category: "diagnostic"
+        hidden:
         class: "temperature"
         state_class: "measurement"
         uom: "°C"
@@ -722,6 +736,7 @@ parameters:
 
       - name: "Min Cell Temperature"
         entity_category: "diagnostic"
+        hidden:
         class: "temperature"
         state_class: "measurement"
         uom: "°C"
