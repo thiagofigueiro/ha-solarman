@@ -767,6 +767,8 @@ parameters:
         rule: 1
         registers: [140]
         icon: "mdi:battery"
+        code: 0x03
+        update_interval: 5
 
       - name: "Battery Type"
         rule: 1
