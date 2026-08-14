@@ -759,7 +759,15 @@ parameters:
             value: "Battery"
           - key: 2
             value: "Grid"
-            
+
+      - name: "Load First Stop SOC"
+        class: "battery"
+        state_class: "measurement"
+        uom: "%"
+        rule: 1
+        registers: [140]
+        icon: "mdi:battery"
+
       - name: "Battery Type"
         rule: 1
         registers: [126]
