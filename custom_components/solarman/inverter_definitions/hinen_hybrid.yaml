@@ -62,6 +62,16 @@ parameters:
         registers: [340, 339]
         icon: "mdi:solar-power-variant"
 
+      - name: "Total PV Input Power"
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 1
+        registers: [2, 1]
+        entity_category: "diagnostic"
+        icon: "mdi:solar-power-variant"
+
       - name: PV1 Voltage
         alt: DC1 Voltage
         class: "voltage"
@@ -87,6 +97,7 @@ parameters:
         class: "power"
         state_class: "measurement"
         uom: "W"
+        scale: .1
         rule: 1
         registers: [7, 6]
         icon: "mdi:solar-power-variant"
@@ -112,10 +123,11 @@ parameters:
         icon: "mdi:solar-power-variant"
 
       - name: PV2 Power
-        alt: DC1 Power
+        alt: DC2 Power
         class: "power"
         state_class: "measurement"
         uom: "W"
+        scale: .1
         rule: 1
         registers: [12, 11]
         icon: "mdi:solar-power-variant"
@@ -145,6 +157,7 @@ parameters:
         class: "power"
         state_class: "measurement"
         uom: "W"
+        scale: .1
         rule: 1
         registers: [17, 16]
         icon: "mdi:solar-power-variant"
@@ -174,6 +187,7 @@ parameters:
         class: "power"
         state_class: "measurement"
         uom: "W"
+        scale: .1
         rule: 1
         registers: [22, 21]
         icon: "mdi:solar-power-variant"
@@ -259,28 +273,6 @@ parameters:
         registers: [24, 23]
         icon: "mdi:transmission-tower"
         description: "Total AC apparent power of the inverter"
-
-      - name: "Grid L1 Voltage"
-        entity_category: "diagnostic"
-        l: 1
-        class: "voltage"
-        state_class: "measurement"
-        uom: "V"
-        scale: .1
-        rule: 1
-        registers: [31]
-        icon: "mdi:transmission-tower"
-
-      - name: "Grid L1 Current"
-        entity_category: "diagnostic"
-        l: 1
-        class: "current"
-        state_class: "measurement"
-        uom: "A"
-        scale: .1
-        rule: 2
-        registers: [32]
-        icon: "mdi:transmission-tower"
 
       - name: "Grid L1 Active Power"
         entity_category: "diagnostic"
