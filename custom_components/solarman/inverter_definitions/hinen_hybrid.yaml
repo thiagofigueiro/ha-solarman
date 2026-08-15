@@ -240,6 +240,253 @@ parameters:
         registers: [107, 106]
         description: "AC power drawn from the grid to charge the battery"
 
+      - name: "Reactive Power"
+        class: "reactive_power"
+        state_class: "measurement"
+        uom: "var"
+        scale: .1
+        rule: 2
+        registers: [28, 27]
+        icon: "mdi:transmission-tower"
+        description: "Total AC reactive power of the inverter"
+
+      - name: "Apparent Power"
+        class: "apparent_power"
+        state_class: "measurement"
+        uom: "VA"
+        scale: .1
+        rule: 2
+        registers: [24, 23]
+        icon: "mdi:transmission-tower"
+        description: "Total AC apparent power of the inverter"
+
+      - name: "Grid L1 Voltage"
+        entity_category: "diagnostic"
+        l: 1
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [31]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L1 Current"
+        entity_category: "diagnostic"
+        l: 1
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 2
+        registers: [32]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L1 Active Power"
+        entity_category: "diagnostic"
+        l: 1
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 2
+        registers: [34, 33]
+        icon: "mdi:transmission-tower"
+        description: "R-phase active power"
+
+      - name: "Grid L1 Reactive Power"
+        entity_category: "diagnostic"
+        l: 1
+        class: "reactive_power"
+        state_class: "measurement"
+        uom: "var"
+        scale: .1
+        rule: 2
+        registers: [36, 35]
+        icon: "mdi:transmission-tower"
+        description: "R-phase reactive power"
+
+      - name: "Grid L2 Voltage"
+        entity_category: "diagnostic"
+        l: 2
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [37]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L2 Current"
+        entity_category: "diagnostic"
+        l: 2
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 2
+        registers: [38]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L2 Apparent Power"
+        entity_category: "diagnostic"
+        l: 2
+        class: "apparent_power"
+        state_class: "measurement"
+        uom: "VA"
+        scale: .1
+        rule: 2
+        registers: [40, 39]
+        icon: "mdi:transmission-tower"
+        description: "S-phase apparent power"
+
+      - name: "Grid L2 Active Power"
+        entity_category: "diagnostic"
+        l: 2
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 2
+        registers: [42, 41]
+        icon: "mdi:transmission-tower"
+        description: "S-phase active power"
+
+      - name: "Grid L2 Reactive Power"
+        entity_category: "diagnostic"
+        l: 2
+        class: "reactive_power"
+        state_class: "measurement"
+        uom: "var"
+        scale: .1
+        rule: 2
+        registers: [44, 43]
+        icon: "mdi:transmission-tower"
+        description: "S-phase reactive power"
+
+      - name: "Grid L3 Voltage"
+        entity_category: "diagnostic"
+        l: 3
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [45]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L3 Current"
+        entity_category: "diagnostic"
+        l: 3
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 2
+        registers: [46]
+        icon: "mdi:transmission-tower"
+
+      - name: "Grid L3 Apparent Power"
+        entity_category: "diagnostic"
+        l: 3
+        class: "apparent_power"
+        state_class: "measurement"
+        uom: "VA"
+        scale: .1
+        rule: 2
+        registers: [48, 47]
+        icon: "mdi:transmission-tower"
+        description: "T-phase apparent power"
+
+      - name: "Grid L3 Active Power"
+        entity_category: "diagnostic"
+        l: 3
+        class: "power"
+        state_class: "measurement"
+        uom: "W"
+        scale: .1
+        rule: 2
+        registers: [50, 49]
+        icon: "mdi:transmission-tower"
+        description: "T-phase active power"
+
+      - name: "Grid L3 Reactive Power"
+        entity_category: "diagnostic"
+        l: 3
+        class: "reactive_power"
+        state_class: "measurement"
+        uom: "var"
+        scale: .1
+        rule: 2
+        registers: [52, 51]
+        icon: "mdi:transmission-tower"
+        description: "T-phase reactive power"
+
+      - name: "Grid Voltage RS"
+        entity_category: "diagnostic"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [53]
+        icon: "mdi:transmission-tower"
+        description: "R-S line voltage"
+
+      - name: "Grid Voltage ST"
+        entity_category: "diagnostic"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [54]
+        icon: "mdi:transmission-tower"
+        description: "S-T line voltage"
+
+      - name: "Grid Voltage TR"
+        entity_category: "diagnostic"
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [55]
+        icon: "mdi:transmission-tower"
+        description: "T-R line voltage"
+
+      - name: "CT1 Current"
+        entity_category: "diagnostic"
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 1
+        registers: [108]
+        description: "CT1 sampling current for external meter"
+
+      - name: "CT2 Current"
+        entity_category: "diagnostic"
+        class: "current"
+        state_class: "measurement"
+        uom: "A"
+        scale: .1
+        rule: 1
+        registers: [109]
+        description: "CT2 sampling current for external meter"
+
+      - name: "CT Status"
+        entity_category: "diagnostic"
+        class: "enum"
+        rule: 1
+        registers: [119]
+        description: "CT insertion detection status"
+        lookup:
+          - key: 0
+            value: "Not Inserted"
+          - key: 1
+            value: "Inserted"
+
   - group: Battery
     update_interval: 5
     items:
@@ -316,6 +563,7 @@ parameters:
         description: "Battery current measured by the BMS"
 
       - name: "BMS Max Charge Current"
+        entity_category: "diagnostic"
         state_class: "measurement"
         uom: "A"
         scale: .1
@@ -324,6 +572,7 @@ parameters:
         description: "Maximum charging current allowed by the BMS"
 
       - name: "BMS Max Discharge Current"
+        entity_category: "diagnostic"
         state_class: "measurement"
         uom: "A"
         scale: .1
@@ -332,6 +581,7 @@ parameters:
         description: "Maximum discharging current allowed by the BMS"
 
       - name: "BMS Gauge Remaining"
+        entity_category: "diagnostic"
         state_class: "measurement"
         uom: "Wh"
         rule: 1
@@ -339,6 +589,7 @@ parameters:
         description: "BMS reported remaining capacity"
 
       - name: "BMS Gauge Full Charge Capacity"
+        entity_category: "diagnostic"
         state_class: "measurement"
         uom: "Wh"
         rule: 1
@@ -346,16 +597,158 @@ parameters:
         description: "BMS reported full charge capacity"
 
       - name: "BMS Cycle Count"
+        entity_category: "diagnostic"
         state_class: "measurement"
         rule: 1
         registers: [173]
         description: "Number of battery charge/discharge cycles"
 
+  - group: Battery Diagnostics
+    update_interval: 60
+    items:
+      - name: "BMS Status"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        rule: 1
+        registers: [155]
+        description: "Battery management system status"
+
+      - name: "BMS SOC"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        uom: "%"
+        scale: .01
+        rule: 1
+        registers: [162]
+        description: "BMS-reported state of charge (0.01 resolution)"
+
+      - name: "BMS Voltage"
+        entity_category: "diagnostic"
+        hidden:
+        class: "voltage"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [163]
+        description: "BMS-reported battery voltage"
+
+      - name: "BMS Temperature"
+        entity_category: "diagnostic"
+        hidden:
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [165]
+        description: "BMS-reported battery temperature"
+
+      - name: "BMS Hardware Version"
+        entity_category: "diagnostic"
+        hidden:
+        rule: 1
+        registers: [171]
+        description: "BMS hardware version number"
+
+      - name: "BMS Delta Voltage"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        rule: 1
+        registers: [172]
+        description: "Single battery voltage difference within the pack"
+
+      - name: "BMS Constant Voltage"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [175]
+        description: "BMS constant voltage (CV) setpoint"
+
+      - name: "BMS Info"
+        entity_category: "diagnostic"
+        hidden:
+        rule: 1
+        registers: [176]
+        description: "BMS information flags"
+
+      - name: "Pack Info"
+        entity_category: "diagnostic"
+        hidden:
+        rule: 1
+        registers: [177]
+        description: "Battery pack information flags"
+
+      - name: "Max Cell Voltage"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        rule: 1
+        registers: [178]
+        description: "Maximum voltage among all cells in the battery"
+
+      - name: "Min Cell Voltage"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        uom: "V"
+        scale: .001
+        rule: 1
+        registers: [179]
+        description: "Minimum voltage among all cells in the battery"
+
+      - name: "Module Count"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        rule: 1
+        registers: [180]
+        description: "Number of battery modules in parallel"
+
+      - name: "Cell Count"
+        entity_category: "diagnostic"
+        hidden:
+        state_class: "measurement"
+        rule: 1
+        registers: [181]
+        description: "Number of cells per module"
+
+      - name: "Max Cell Temperature"
+        entity_category: "diagnostic"
+        hidden:
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [184]
+        description: "Maximum temperature among all cells"
+
+      - name: "Min Cell Temperature"
+        entity_category: "diagnostic"
+        hidden:
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [185]
+        description: "Minimum temperature among all cells"
+
   - group: Settings
     update_interval: 300
     items:
       - name: "Energy Pattern"
-        platform: "select"
         rule: 1
         registers: [125]
         icon: mdi:battery-sync
@@ -366,9 +759,18 @@ parameters:
             value: "Battery"
           - key: 2
             value: "Grid"
-            
-      - name: "Battery Control Mode"
-        platform: "select"
+
+      - name: "Load First Stop SOC"
+        class: "battery"
+        state_class: "measurement"
+        uom: "%"
+        rule: 1
+        registers: [140]
+        icon: "mdi:battery"
+        code: 0x03
+        update_interval: 5
+
+      - name: "Battery Type"
         rule: 1
         registers: [126]
         icon: "mdi:battery"
@@ -382,23 +784,36 @@ parameters:
     update_interval: 3600
     items:
       - name: Battery Software Version
+        entity_category: "diagnostic"
         rule: 1
         registers: [170]
 
       - name: "Master DSP Version"
+        entity_category: "diagnostic"
         rule: 1
         registers: [341]
         description: "Master DSP firmware version (major * 100 + minor)"
 
       - name: "Slave DSP Version"
+        entity_category: "diagnostic"
         rule: 1
         registers: [342]
         description: "Slave DSP firmware version (major * 100 + minor)"
+
+      - name: "Total Working Time"
+        entity_category: "diagnostic"
+        state_class: "total_increasing"
+        uom: "s"
+        scale: .5
+        rule: 1
+        registers: [255, 254]
+        description: "Total inverter operating time in seconds (register value × 0.5)"
 
   - group: Diagnostics
     update_interval: 30
     items:
       - name: "IPM Temperature"
+        entity_category: "diagnostic"
         class: "temperature"
         state_class: "measurement"
         uom: "°C"
@@ -408,6 +823,7 @@ parameters:
         description: "Internal intelligent power module temperature"
 
       - name: "LLC Temperature"
+        entity_category: "diagnostic"
         class: "temperature"
         state_class: "measurement"
         uom: "°C"
@@ -417,6 +833,7 @@ parameters:
         description: "Inductor-Inductor-Capacitor resonant converter radiator temperature"
 
       - name: "Fan Speed"
+        entity_category: "diagnostic"
         state_class: "measurement"
         rule: 1
         registers: [135]
@@ -424,6 +841,7 @@ parameters:
         description: "Internal cooling fan speed"
 
       - name: "Bus1 Voltage"
+        entity_category: "diagnostic"
         class: "voltage"
         state_class: "measurement"
         uom: "V"
@@ -433,6 +851,7 @@ parameters:
         description: "DC bus 1 internal voltage"
 
       - name: "Bus2 Voltage"
+        entity_category: "diagnostic"
         class: "voltage"
         state_class: "measurement"
         uom: "V"
@@ -442,6 +861,7 @@ parameters:
         description: "DC bus 2 internal voltage"
 
       - name: "Fault Maincode"
+        entity_category: "diagnostic"
         class: "enum"
         rule: 1
         registers: [147]
@@ -452,6 +872,105 @@ parameters:
             value: "No Fault"
           - key: default
             value: "Fault"
+
+      - name: "Software Sub Version"
+        entity_category: "diagnostic"
+        rule: 1
+        registers: [121]
+        description: "DSP sub-version number"
+
+      - name: "MCU Temperature"
+        entity_category: "diagnostic"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [123]
+        description: "Monitor board chip temperature"
+
+      - name: "Ambient Temperature"
+        entity_category: "diagnostic"
+        class: "temperature"
+        state_class: "measurement"
+        uom: "°C"
+        scale: .1
+        rule: 2
+        registers: [124]
+        description: "Monitor board environment temperature"
+
+      - name: "BatVolt DSP"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [129]
+        description: "Battery voltage sampled by the inverter"
+
+      - name: "LLC Voltage"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [137]
+        description: "LLC resonant converter voltage"
+
+      - name: "BatPackVolt"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "V"
+        scale: .1
+        rule: 1
+        registers: [138]
+        description: "Battery pack voltage"
+
+      - name: "Fault Subcode"
+        entity_category: "diagnostic"
+        rule: 1
+        registers: [148]
+        description: "Inverter sub-fault code"
+
+      - name: "ISO Resistance"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "k\u03A9"
+        rule: 1
+        registers: [318]
+        description: "Insulation resistance value"
+
+      - name: "GFCI"
+        entity_category: "diagnostic"
+        state_class: "measurement"
+        uom: "mA"
+        rule: 2
+        registers: [319]
+        description: "Ground fault circuit interrupter current"
+
+      - name: "Derating Mode Flag"
+        entity_category: "diagnostic"
+        class: "enum"
+        rule: 1
+        registers: [153]
+        description: "Derating mode indicator"
+        lookup:
+          - key: 0
+            value: "Normal"
+          - key: default
+            value: "Derating"
+
+      - name: "Power Cos Flag"
+        entity_category: "diagnostic"
+        class: "enum"
+        rule: 1
+        registers: [154]
+        description: "Power factor leading/lagging indicator"
+        lookup:
+          - key: 0
+            value: "Lagging"
+          - key: 1
+            value: "Leading"
 
   - group: Energy
     update_interval: 30
@@ -483,6 +1002,131 @@ parameters:
           dev: 100
           invalidate_all: 2
 
+      - name: "PV Year Production"
+        alt: "PV Annual Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [351, 350]
+        icon: "mdi:solar-power"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual PV energy production"
+
+      - name: "PV Month Production"
+        alt: "PV Monthly Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [353, 352]
+        icon: "mdi:solar-power"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly PV energy production"
+
+      - name: "PV1 Today Production"
+        alt: "PV1 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [257, 256]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV1 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV1 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [259, 258]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV1 MPPT input"
+
+      - name: "PV2 Today Production"
+        alt: "PV2 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [261, 260]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV2 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV2 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [263, 262]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV2 MPPT input"
+
+      - name: "PV3 Today Production"
+        alt: "PV3 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [265, 264]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV3 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV3 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [267, 266]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV3 MPPT input"
+
+      - name: "PV4 Today Production"
+        alt: "PV4 Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [269, 268]
+        icon: "mdi:solar-power"
+        description: "Daily energy production from PV4 MPPT input"
+        validation:
+          dev: 100
+          invalidate_all:
+
+      - name: "PV4 Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [271, 270]
+        icon: "mdi:solar-power"
+        description: "Total energy production from PV4 MPPT input"
+
       - name: "Today Battery Charge"
         alt: "Battery Daily Charging Energy"
         class: "energy"
@@ -501,6 +1145,35 @@ parameters:
         rule: 2
         registers: [279, 278]
         icon: "mdi:battery-plus"
+
+      - name: "Battery Charge Year"
+        alt: "Battery Charge Annual"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [367, 366]
+        icon: "mdi:battery-plus"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual battery charge energy"
+
+      - name: "Battery Charge Month"
+        alt: "Battery Charge Monthly"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [369, 368]
+        icon: "mdi:battery-plus"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly battery charge energy"
 
       - name: "Today Battery Discharge"
         alt: "Battery Daily Discharging Energy"
@@ -521,6 +1194,35 @@ parameters:
         registers: [283, 282]
         icon: "mdi:battery-minus"
 
+      - name: "Battery Discharge Year"
+        alt: "Battery Discharge Annual"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [371, 370]
+        icon: "mdi:battery-minus"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual battery discharge energy"
+
+      - name: "Battery Discharge Month"
+        alt: "Battery Discharge Monthly"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [373, 372]
+        icon: "mdi:battery-minus"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly battery discharge energy"
+
       - name: "Today Load Consumption"
         alt: Daily Load Consumption
         friendly_name: Today's Energy Consumption
@@ -538,6 +1240,33 @@ parameters:
         scale: .1
         rule: 2
         registers: [303, 302]
+
+      - name: "Load Year Consumption"
+        alt: "Load Annual Consumption"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [355, 354]
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual load consumption"
+
+      - name: "Load Month Consumption"
+        alt: "Load Monthly Consumption"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [357, 356]
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly load consumption"
 
       - name: "Today Energy Export"
         alt: Daily Energy Sold
@@ -561,6 +1290,35 @@ parameters:
         registers: [307, 306]
         icon: mdi:transmission-tower-import
 
+      - name: "Export Year Energy"
+        alt: "Export Annual Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [359, 358]
+        icon: "mdi:transmission-tower-import"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual energy exported to the grid"
+
+      - name: "Export Month Energy"
+        alt: "Export Monthly Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [361, 360]
+        icon: "mdi:transmission-tower-import"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly energy exported to the grid"
+
       - name: "Today Energy Import"
         alt: Daily Energy Bought
         friendly_name: Today's Energy Import
@@ -583,6 +1341,140 @@ parameters:
         rule: 2
         registers: [311, 310]
         icon: mdi:transmission-tower-export
+
+      - name: "Import Year Energy"
+        alt: "Import Annual Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [363, 362]
+        icon: "mdi:transmission-tower-export"
+        validation:
+          min: .1
+          dev: 100
+          invalidate_all: 2
+        description: "Annual energy imported from the grid"
+
+      - name: "Import Month Energy"
+        alt: "Import Monthly Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [365, 364]
+        icon: "mdi:transmission-tower-export"
+        validation:
+          dev: 100
+          invalidate_all:
+        description: "Monthly energy imported from the grid"
+
+      - name: "AC Today Production"
+        alt: "AC Daily Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [251, 250]
+        icon: "mdi:solar-power"
+        description: "Daily AC-side energy production"
+
+      - name: "AC Total Production"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [253, 252]
+        icon: "mdi:solar-power"
+        description: "Total AC-side energy production"
+
+      - name: "AC Charge Today Energy"
+        alt: "AC Charge Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [285, 284]
+        icon: "mdi:transmission-tower-export"
+        description: "Daily AC energy used to charge the battery from the grid"
+
+      - name: "AC Charge Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [287, 286]
+        icon: "mdi:transmission-tower-export"
+        description: "Total AC energy used to charge the battery from the grid"
+
+      - name: "Extra Today Energy"
+        alt: "Extra Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [289, 288]
+        icon: "mdi:flash"
+        description: "Daily extra power from inverter to loads"
+
+      - name: "Extra Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [291, 290]
+        icon: "mdi:flash"
+        description: "Total extra power from inverter to loads"
+
+      - name: "System Today Energy"
+        alt: "System Daily Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [293, 292]
+        icon: "mdi:sine-wave"
+        description: "Daily system energy generation"
+
+      - name: "System Total Energy"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [295, 294]
+        icon: "mdi:sine-wave"
+        description: "Total system energy generation"
+
+      - name: "Self Consumption Today"
+        alt: "Self Consumption Daily"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [297, 296]
+        icon: "mdi:home-lightning-bolt"
+        description: "Daily self-consumed PV energy (generated and used locally)"
+
+      - name: "Self Consumption Total"
+        class: "energy"
+        state_class: "total_increasing"
+        uom: "kWh"
+        scale: .1
+        rule: 2
+        registers: [299, 298]
+        icon: "mdi:home-lightning-bolt"
+        description: "Total self-consumed PV energy (generated and used locally)"
 
       - name: Today Losses
         alt: Daily Losses
