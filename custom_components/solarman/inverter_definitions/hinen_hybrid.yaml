@@ -858,12 +858,98 @@ parameters:
         rule: 1
         registers: [147]
         icon: "mdi:alert-outline"
-        description: "Inverter main fault code (0 = no fault)"
+        description: "Inverter main fault/warning code (0 = no fault)"
         lookup:
           - key: 0
             value: "No Fault"
+          - key: 108
+            value: "Fault: NTC Temperature too high"
+          - key: 109
+            value: "Fault: Bus voltage abnormal"
+          - key: 110
+            value: "Fault: Communication fault"
+          - key: 200
+            value: "Fault: No AC Connection"
+          - key: 201
+            value: "Fault: AC V Outrange"
+          - key: 202
+            value: "Fault: AC F Outrange"
+          - key: 205
+            value: "Fault: CT LN Reversed"
+          - key: 300
+            value: "Fault: EPS OP Short Fault"
+          - key: 302
+            value: "Fault: Off-grid output voltage is too low"
+          - key: 303
+            value: "Fault: Off-grid output voltage is too High"
+          - key: 401
+            value: "Fault: The DC input voltage is exceeding the maximum tolerable value"
+          - key: 500
+            value: "Fault: BMS Communication fault"
+          - key: 502
+            value: "Fault: Battery voltage low"
+          - key: 503
+            value: "Fault: Battery Voltage High"
+          - key: 504
+            value: "Fault: Battery temperature out of specified range for charge or discharge"
+          - key: 505
+            value: "Fault: Battery terminals reversed"
+          - key: 506
+            value: "Fault: Battery terminal open (only for lithium battery)"
+          - key: 1100
+            value: "Warning: Fan function abnormal"
+          - key: 1101
+            value: "Warning: Meter abnormal"
+          - key: 1102
+            value: "Warning: Optimizer and inverter communication is abnormal"
+          - key: 1103
+            value: "Warning: Optimizer and inverter communication is abnormal"
+          - key: 1104
+            value: "Warning: Bus voltage Low"
+          - key: 1200
+            value: "Warning: No Utility"
+          - key: 1201
+            value: "Warning: Grid voltage outrange"
+          - key: 1202
+            value: "Warning: Grid frequency outrange"
+          - key: 1204
+            value: "Warning: CT Open"
+          - key: 1205
+            value: "Warning: SP-CT L N line reversed or Ground fail"
+          - key: 1206
+            value: "Warning: Communication fault, M didn't receive SP-CT data"
+          - key: 1302
+            value: "Warning: Off-grid output voltage is too High"
+          - key: 1303
+            value: "Warning: Off-grid output voltage is too low"
+          - key: 1304
+            value: "Warning: EPS OP OverLord Warning"
+          - key: 1404
+            value: "Warning: Dryconnect function abnormal"
+          - key: 1406
+            value: "Warning: PV Reversed"
+          - key: 1501
+            value: "Warning: Battery terminal open (only for lithium battery)"
+          - key: 1502
+            value: "Warning: Lead-acid battery temperature sensor was open"
+          - key: 1503
+            value: "Warning: Battery temperature outrange"
+          - key: 1504
+            value: "Warning: Lithium battery Over Load warning"
+          - key: 1505
+            value: "Warning: Lithium battery only charge warning"
+          - key: 1506
+            value: "Warning: Lithium battery need charge warning"
+          - key: 1507
+            value: "Warning: Lithium battery charge full warning"
+          - key: 1508
+            value: "Warning: Lithium battery disable charge for bus High warning"
+          - key: 1509
+            value: "Warning: Lithium battery disable discharge for bus High warning"
+          - key: 1510
+            value: "Warning: Temperature sensor connection is abnormal"
           - key: default
-            value: "Fault"
+            value: "Unknown"
 
       - name: "Software Sub Version"
         entity_category: "diagnostic"
@@ -920,9 +1006,16 @@ parameters:
 
       - name: "Fault Subcode"
         entity_category: "diagnostic"
+        class: "enum"
         rule: 1
         registers: [148]
-        description: "Inverter sub-fault code"
+        icon: "mdi:alert-outline"
+        description: "Inverter sub-fault code (0 = none)"
+        lookup:
+          - key: 0
+            value: "None"
+          - key: default
+            value: "Unknown"
 
       - name: "ISO Resistance"
         entity_category: "diagnostic"
